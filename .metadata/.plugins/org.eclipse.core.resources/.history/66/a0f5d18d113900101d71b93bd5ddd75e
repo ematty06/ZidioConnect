@@ -1,0 +1,42 @@
+package com.zidio.connect.auth.controller;
+
+import com.zidio.connect.auth.dto.*;
+import com.zidio.connect.auth.service.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:8001") // or wherever your frontend runs
+
+@RequestMapping("/api/auth")
+public class AuthController {
+
+    @Autowired private StudentAuthService studentService;
+    @Autowired private RecruiterAuthService recruiterService;
+    @Autowired private AdminAuthService adminService;
+
+    @PostMapping("/student/register")
+    public LoginResponse registerStudent(@RequestBody RegisterRequest request) {
+        return studentService.register(request);
+    }
+
+    @PostMapping("/student/login")
+    public LoginResponse loginStudent(@RequestBody LoginRequest request) {
+        return studentService.login(request);
+    }
+
+    @PostMapping("/recruiter/register")
+    public LoginResponse registerRecruiter(@RequestBody RegisterRequest request) {
+        return recruiterService.register(request);
+    }
+
+    @PostMapping("/recruiter/login")
+    public LoginResponse loginRecruiter(@RequestBody LoginRequest request) {
+        return recruiterService.login(request);
+    }
+
+    @PostMapping("/admin/login")
+    public LoginResponse loginAdmin(@RequestBody LoginRequest request) {
+        return adminService.login(request);
+    }
+}

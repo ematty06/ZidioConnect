@@ -1,0 +1,26 @@
+# Server configuration
+server.port=8081
+
+# Datasource (MySQL) configuration
+spring.datasource.url=jdbc:mysql://localhost:3306/zidioconnect?useSSL=false&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=Manu@2006
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# JPA / Hibernate configuration
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+# Logging SQL statements (optional, useful for debugging)
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+
+# Spring MVC CORS config (if you want to control from properties instead of Java config)
+# (Optional, since you have WebConfig class)
+# spring.web.cors.allowed-origins=*
+# spring.web.cors.allowed-methods=*
+
+# Security - disable default security if not using Spring Security fully (optional)
+# spring.security.user.name=admin
+# spring.security.user.password=admin
