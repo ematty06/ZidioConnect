@@ -89,7 +89,7 @@ function StudentDashboard() {
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <span
-                      className={`px-2 py-1 text-sm rounded ${
+                      className={\`px-2 py-1 text-sm rounded ${
                         application.status === 'PENDING'
                           ? 'bg-yellow-100 text-yellow-800'
                           : application.status === 'SELECTED'

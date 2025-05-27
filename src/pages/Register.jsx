@@ -32,7 +32,7 @@ function Register() {
           <button
             key={type}
             onClick={() => setUserType(type)}
-            className={`flex-1 py-2 rounded capitalize ${
+            className={\`flex-1 py-2 rounded capitalize ${
               userType === type
                 ? 'bg-blue-600 text-white'
                 : 'bg-gray-200 text-gray-700'
